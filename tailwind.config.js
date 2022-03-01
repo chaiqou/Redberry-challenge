@@ -6,6 +6,8 @@ module.exports = {
       backgroundImage: {
         "stars-backs": "url('./images/stars.png')",
         "rocket-man": "url('./images/man.png')",
+        "split-white-black":
+          "linear-gradient(to left, #111827 50% , white 50%);",
       },
       inset: {
         welcome: "434px",
