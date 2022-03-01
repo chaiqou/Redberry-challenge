@@ -4,10 +4,9 @@ const SplitContainer = (props) => {
   return (
     <div
       style={{
-        height: "100vh",
-        width: "100vw",
         background: "linear-gradient(to left, black 50% , white 50%)",
       }}
+      className="h-screen w-screen"
     >
       {props.children}
     </div>
