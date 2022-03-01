@@ -9,16 +9,17 @@ const Personal = () => {
   }, []);
 
   // reusable text styles
-  const textStyles = `absolute w-[45vw] h-[30vh] font-['Rowdies'] text-redBerry
-  non-italic font-normal text-5xl leading-tight`;
+  const textStyles = `font-['Rowdies'] text-redBerry non-italic font-normal text-5xl leading-tight`;
 
   return (
     <SplitContainer>
-      <h1 className={`left-[5vw] top-[7vh] ${textStyles}`}>
+      <h1
+        className={`absolute w-[45vw] h-[30vh] left-[5vw] top-[7vh] ${textStyles}`}
+      >
         Hey, Rocketeer, what are your coordinates?
       </h1>
       <h1
-        className={`left-[60vw] top-[7vh] flex items-center  ${textStyles} xl: w-[60vw] h-[60vh] leading-none`}
+        className={`absolute w-[45vw] h-[30vh] left-[60vw] top-[7vh] flex items-center  ${textStyles} `}
       >
         Redberry Origin
       </h1>
