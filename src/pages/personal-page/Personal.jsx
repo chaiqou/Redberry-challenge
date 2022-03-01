@@ -9,20 +9,20 @@ const Personal = () => {
   }, []);
 
   // reusable text styles
-  const textStyles = `absolute w-[716px] h-[128px] font-['Rowdies'] text-redBerry
-  non-italic font-normal text-6xl leading-[69px]`;
+  const textStyles = `absolute w-[45vw] h-[20vh] font-['Rowdies'] text-redBerry
+  non-italic font-normal text-6xl leading-tight`;
 
   return (
     <SplitContainer>
-      <h1 className={`left-[65px] top-[45px] ${textStyles}`}>
+      <h1 className={`left-[5vw] top-[7vh] ${textStyles}`}>
         Hey, Rocketeer, what are your coordinates?
       </h1>
-      <h1 className={`left-[60vw] top-[45px] flex items-center  ${textStyles}`}>
+      <h1 className={`left-[60vw] top-[7vh] flex items-center  ${textStyles}`}>
         Redberry Origin
       </h1>
       <p
-        className="absolute w-[705px] h-[606px] left-[800px] top-[80px] leading-loose tracking-wider items-center flex 
-      text-white non-italic text-lg font-['Montserrat']"
+        className="absolute w-[45vw] h-[606px] left-[53vw] top-[8vh] leading-relax tracking-wider items-center flex 
+      text-white non-italic text-2xl font-['Montserrat']"
       >
         You watch “What? Where? When?” Yeah. Our founders used to play it.
         That’s where they got a question about a famous American author and
