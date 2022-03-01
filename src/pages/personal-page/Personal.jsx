@@ -19,7 +19,7 @@ const Personal = () => {
         Hey, Rocketeer, what are your coordinates?
       </h1>
       <h1
-        className={`absolute w-[45vw] h-[30vh] left-[60vw] top-[7vh] flex items-center  ${textStyles} `}
+        className={`absolute w-[45vw] h-[20vh] left-[60vw] top-[7vh] flex items-center  ${textStyles} `}
       >
         Redberry Origin
       </h1>
