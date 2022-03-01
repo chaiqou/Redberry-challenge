@@ -5,6 +5,7 @@ const SplitContainer = (props) => {
     <div
       style={{
         height: "100vh",
+        width: "100vw",
         background: "linear-gradient(to left, black 50% , white 50%)",
       }}
     >

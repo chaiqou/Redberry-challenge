@@ -6,7 +6,7 @@ const Main = () => {
     <div className="h-screen ">
       <div className="absolute inset-0 bg-zinc-900 bg-stars-backs">
         <h1
-          className="absolute font-['Rowdies'] non-italic left-[434px] top-[175px] 
+          className="absolute overflow-visible font-['Rowdies'] non-italic left-[434px] top-[175px] 
       inset-auto flex text-7xl font-normal text-redBerry items-center text-center leading-10"
         >
           Welcome Rocketeer !

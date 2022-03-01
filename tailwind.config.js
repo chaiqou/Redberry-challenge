@@ -83,7 +83,7 @@ module.exports = {
         },
       },
       animation: {
-        "slide-in": "slide-in 3s ease-out",
+        "slide-in": "slide-in 1s ease-out",
         "bounce-in": "bounce 3s infinite",
         "slide-fwd":
           " slide-fwd 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
