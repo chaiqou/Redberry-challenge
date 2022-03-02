@@ -61,12 +61,10 @@ const PersonalForm = () => {
         name="firstname"
         position={`top-[385px]`}
         placeholder="First name"
+        formikError={formik?.errors?.firstname}
       />
       {formik.errors.firstname ? (
-        <ErrorText
-          text={formik.errors.firstname}
-          position={`left-[200px] top-[330px]`}
-        />
+        <ErrorText text={formik.errors.firstname} position={`top-[330px]`} />
       ) : null}
       <InputField
         onChange={formik.handleChange}
@@ -75,12 +73,10 @@ const PersonalForm = () => {
         name="lastname"
         position={`top-[500px]`}
         placeholder="Last name"
+        formikError={formik?.errors?.lastname}
       />
       {formik.errors.lastname ? (
-        <ErrorText
-          text={formik.errors.lastname}
-          position={`left-[200px] top-[445px]`}
-        />
+        <ErrorText text={formik.errors.lastname} position={`top-[445px]`} />
       ) : null}
       <InputField
         onChange={formik.handleChange}
@@ -89,12 +85,10 @@ const PersonalForm = () => {
         name="email"
         position={`top-[610px]`}
         placeholder="Email"
+        formikError={formik?.errors?.email}
       />
       {formik.errors.email ? (
-        <ErrorText
-          text={formik.errors.email}
-          position={`left-[200px] top-[560px]`}
-        />
+        <ErrorText text={formik.errors.email} position={`top-[560px]`} />
       ) : null}
       <InputField
         onChange={formik.handleChange}
@@ -103,12 +97,10 @@ const PersonalForm = () => {
         name="number"
         position={`top-[730px]`}
         placeholder="Number"
+        formikError={formik?.errors?.number}
       />
       {formik.errors.number ? (
-        <ErrorText
-          text={formik.errors.number}
-          position={`left-[200px] top-[675px]`}
-        />
+        <ErrorText text={formik.errors.number} position={`top-[675px]`} />
       ) : null}
       <NextButton position={`absolute left-48 top-[800px]`} />
     </form>
