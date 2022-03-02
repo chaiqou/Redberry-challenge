@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 // components
-import SplitContainer from "../../components/split-container/SplitContainer";
+import SplitContainer from "../../components/SplitContainer";
 import PersonalForm from "../personal-page/PersonalForm";
 
 const Personal = () => {

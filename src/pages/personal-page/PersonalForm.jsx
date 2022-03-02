@@ -2,6 +2,40 @@ import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import NextButton from "../../components/NextButton";
 import InputField from "../../components/InputField";
+import ErrorText from "../../components/ErrorText";
+
+const initialValues = {
+  // sawyisi valueebi form submissionistvis
+  firstname: "",
+  lastname: "",
+  email: "",
+  number: "",
+};
+const onSubmit = (values) => {
+  // aqedan gaigzavneba values api_shi post requestit
+  console.log(values);
+};
+
+const validate = (values) => {
+  // validate method abrunebs objects , aqedan gvchirdeba errorebiss objecti
+  // errors objectis key values === initialValues key values , error object value === ERROR MESSAGE VALUE
+  let errors = {};
+
+  if (!values.firstname) {
+    errors.firstname = "This field is required";
+  }
+  if (!values.lastname) {
+    errors.lastname = "This field is required";
+  }
+  if (!values.email) {
+    errors.email = "This field is required";
+  }
+  if (!values.number) {
+    errors.number = "This field is required";
+  }
+
+  return errors;
+};
 
 const PersonalForm = () => {
   const history = useHistory();
@@ -9,16 +43,9 @@ const PersonalForm = () => {
   // managing form state
 
   const formik = useFormik({
-    // formis sawyisi valueebi
-    initialValues: {
-      firstname: "",
-      lastname: "",
-      email: "",
-      number: "",
-    },
-    onSubmit: (data) => {
-      console.log(data);
-    },
+    initialValues,
+    onSubmit,
+    validate,
   });
 
   return (
@@ -32,35 +59,58 @@ const PersonalForm = () => {
         value={formik.values.firstname}
         type="text"
         name="firstname"
-        position={`top-[390px]`}
+        position={`top-[385px]`}
         placeholder="First name"
       />
+      {formik.errors.firstname ? (
+        <ErrorText
+          text={formik.errors.firstname}
+          position={`left-[200px] top-[330px]`}
+        />
+      ) : null}
       <InputField
         onChange={formik.handleChange}
         value={formik.values.lastname}
         type="text"
         name="lastname"
-        position={`top-[481px]`}
+        position={`top-[500px]`}
         placeholder="Last name"
       />
+      {formik.errors.lastname ? (
+        <ErrorText
+          text={formik.errors.lastname}
+          position={`left-[200px] top-[445px]`}
+        />
+      ) : null}
       <InputField
         onChange={formik.handleChange}
         value={formik.values.email}
-        type="text"
+        type="email"
         name="email"
-        position={`top-[571px]`}
+        position={`top-[610px]`}
         placeholder="Email"
       />
+      {formik.errors.email ? (
+        <ErrorText
+          text={formik.errors.email}
+          position={`left-[200px] top-[560px]`}
+        />
+      ) : null}
       <InputField
         onChange={formik.handleChange}
         value={formik.values.number}
         type="number"
-        name="Number"
-        position={`top-[662px]`}
+        name="number"
+        position={`top-[730px]`}
         placeholder="Number"
       />
-
-      <NextButton position={`absolute left-48 top-[740px]`} />
+      {formik.errors.number ? (
+        <ErrorText
+          text={formik.errors.number}
+          position={`left-[200px] top-[675px]`}
+        />
+      ) : null}
+      <NextButton position={`absolute left-48 top-[800px]`} />
     </form>
   );
 };

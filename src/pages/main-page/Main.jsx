@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <div className="h-screen">
+    <div className="h-full w-full">
       <div className="absolute inset-0 bg-zinc-900 bg-stars-backs">
         <h1
           className="absolute w-[1090px] h-[212px] left-[474px] top-[175px] overflow-visible font-['Rowdies'] non-italic  
