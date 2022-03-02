@@ -11,10 +11,6 @@ const initialValues = {
   email: "",
   number: "",
 };
-const onSubmit = (values) => {
-  // aqedan gaigzavneba values api_shi post requestit
-  console.log(values);
-};
 
 const validate = (values) => {
   // validate method abrunebs objects , aqedan gvchirdeba errorebiss objecti
@@ -39,13 +35,18 @@ const validate = (values) => {
 
 const PersonalForm = () => {
   const history = useHistory();
-
   // managing form state
 
   const formik = useFormik({
     initialValues,
-    onSubmit,
     validate,
+    onSubmit: (values) => {
+      // aqedan gaigzavneba values api_shi post requestit da dasabmitebis dros aseve
+      // gadavalt shemdeg pageze tu formebi shevsebuli iqneba zustad
+      if (values) {
+        history.push("/covid");
+      }
+    },
   });
 
   return (
