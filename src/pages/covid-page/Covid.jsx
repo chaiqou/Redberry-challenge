@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Dropdown from "../../components/Dropdown";
 import SplitContainer from "../../components/SplitContainer";
 import TextContainer from "../../components/TextContainer";
 
@@ -24,6 +25,7 @@ const Covid = () => {
         technologies like Docker and Kubernetes, and now we have set foot in the
         web3 industry.
       </TextContainer>
+      <Dropdown position={`left-[380px] top-[270px]`} />
     </SplitContainer>
   );
 };

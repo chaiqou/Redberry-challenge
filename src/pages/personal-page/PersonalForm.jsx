@@ -49,6 +49,7 @@ const PersonalForm = () => {
     },
   });
 
+  console.log(formik.touched);
   return (
     <form
       type="submit"
@@ -59,12 +60,14 @@ const PersonalForm = () => {
         onChange={formik.handleChange}
         value={formik.values.firstname}
         type="text"
+        onBlur={formik.handleBlur}
         name="firstname"
         position={`top-[385px]`}
         placeholder="First name"
         formikError={formik?.errors?.firstname}
+        visited={formik?.touched?.firstname}
       />
-      {formik.errors.firstname ? (
+      {formik.touched.firstname && formik.errors.firstname ? (
         <ErrorText text={formik.errors.firstname} position={`top-[330px]`} />
       ) : null}
       <InputField
@@ -72,11 +75,13 @@ const PersonalForm = () => {
         value={formik.values.lastname}
         type="text"
         name="lastname"
+        onBlur={formik.handleBlur}
         position={`top-[500px]`}
         placeholder="Last name"
         formikError={formik?.errors?.lastname}
+        visited={formik?.touched?.lastname}
       />
-      {formik.errors.lastname ? (
+      {formik.touched.lastname && formik.errors.lastname ? (
         <ErrorText text={formik.errors.lastname} position={`top-[445px]`} />
       ) : null}
       <InputField
@@ -84,11 +89,13 @@ const PersonalForm = () => {
         value={formik.values.email}
         type="email"
         name="email"
+        onBlur={formik.handleBlur}
         position={`top-[610px]`}
         placeholder="Email"
         formikError={formik?.errors?.email}
+        visited={formik?.touched?.email}
       />
-      {formik.errors.email ? (
+      {formik.touched.email && formik.errors.email ? (
         <ErrorText text={formik.errors.email} position={`top-[560px]`} />
       ) : null}
       <InputField
@@ -96,11 +103,13 @@ const PersonalForm = () => {
         value={formik.values.number}
         type="number"
         name="number"
+        onBlur={formik.handleBlur}
         position={`top-[730px]`}
         placeholder="Number"
         formikError={formik?.errors?.number}
+        visited={formik?.touched?.number}
       />
-      {formik.errors.number ? (
+      {formik.touched.number && formik.errors.number ? (
         <ErrorText text={formik.errors.number} position={`top-[675px]`} />
       ) : null}
       <NextButton position={`absolute left-48 top-[800px]`} />
