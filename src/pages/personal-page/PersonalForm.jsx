@@ -5,7 +5,7 @@ import {
   reusableStylesField,
   reusableStylesError,
 } from "../../helpers/ReusableStyles";
-
+import "yup-phone-lite";
 import * as Yup from "yup";
 
 const initialValues = {
@@ -33,7 +33,7 @@ const validationSchema = Yup.object({
     .required(
       "This field is required , Please fill things up and try submitting again"
     ),
-  number: Yup.string().min(9),
+  number: Yup.string().phone("GE", "Please enter a valid phone number"),
 });
 
 // COMPONENT !!!
