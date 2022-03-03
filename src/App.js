@@ -10,21 +10,21 @@ import TechnicalPage from "./pages/technical-page/Technical";
 import ThanksPage from "./pages/thanks-page/Thanks";
 
 // router
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route path="/covid" component={CovidPage} />
-        <Route path="/personal" component={PersonalPage} />
-        <Route path="/radberry" component={RadberryPage} />
-        <Route path="/submit" component={SubmitPage} />
-        <Route path="/survey" component={SurveyPage} />
-        <Route path="/technical" component={TechnicalPage} />
-        <Route path="/thanks" component={ThanksPage} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/covid" element={<CovidPage />} />
+        <Route path="/personal" element={<PersonalPage />} />
+        <Route path="/radberry" element={<RadberryPage />} />
+        <Route path="/submit" element={<SubmitPage />} />
+        <Route path="/survey" element={<SurveyPage />} />
+        <Route path="/technical" element={<TechnicalPage />} />
+        <Route path="/thanks" element={<ThanksPage />} />
+      </Routes>
     </div>
   );
 };

@@ -1,119 +1,111 @@
-import { useHistory } from "react-router-dom";
-import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import NextButton from "../../components/NextButton";
-import InputField from "../../components/InputField";
-import ErrorText from "../../components/ErrorText";
+import {
+  reusableStylesField,
+  reusableStylesError,
+} from "../../helpers/ReusableStyles";
+
+import * as Yup from "yup";
 
 const initialValues = {
-  // sawyisi valueebi form submissionistvis
+  // sawyisi value stateebi sadac aisaxeba validaciis dros sheyvanili user informacia
   firstname: "",
   lastname: "",
   email: "",
   number: "",
 };
 
-const validate = (values) => {
-  // validate method abrunebs objects , aqedan gvchirdeba errorebiss objecti
-  // errors objectis key values === initialValues key values , error object value === ERROR MESSAGE VALUE
-  let errors = {};
+// validationistvis sachiro motxovnebi romlebic unda daakmayofilos userma sxva gverdze gadasvlis dros
+const validationSchema = Yup.object({
+  firstname: Yup.string()
+    .min(2)
+    .required(
+      "This field is required , Please fill things up and try submitting again"
+    ),
+  lastname: Yup.string()
+    .min(2)
+    .required(
+      "This field is required , Please fill things up and try submitting again"
+    ),
+  email: Yup.string()
+    .email()
+    .required(
+      "This field is required , Please fill things up and try submitting again"
+    ),
+  number: Yup.string().min(9),
+});
 
-  if (!values.firstname) {
-    errors.firstname = "This field is required";
-  }
-  if (!values.lastname) {
-    errors.lastname = "This field is required";
-  }
-  if (!values.email) {
-    errors.email = "This field is required";
-  }
-  if (!values.number) {
-    errors.number = "This field is required";
-  }
-
-  return errors;
-};
+// COMPONENT !!!
 
 const PersonalForm = () => {
-  const history = useHistory();
-  // managing form state
+  const navigate = useNavigate();
+  // dasabmitebis shemdeg tu ra moxdeba tu yvela field sheesabameba motxovnebs
 
-  const formik = useFormik({
-    initialValues,
-    validate,
-    onSubmit: (values) => {
-      // aqedan gaigzavneba values api_shi post requestit da dasabmitebis dros aseve
-      // gadavalt shemdeg pageze tu formebi shevsebuli iqneba zustad
-      if (values) {
-        history.push("/covid");
-      }
-    },
-  });
+  const onSubmit = (values) => {
+    navigate("/covid");
+  };
 
-  console.log(formik.touched);
   return (
-    <form
-      type="submit"
-      onSubmit={formik.handleSubmit}
-      className="flex flex-col"
+    <Formik
+      onSubmit={onSubmit}
+      initialValues={initialValues}
+      validationSchema={validationSchema}
     >
-      <InputField
-        onChange={formik.handleChange}
-        value={formik.values.firstname}
-        type="text"
-        onBlur={formik.handleBlur}
-        name="firstname"
-        position={`top-[385px]`}
-        placeholder="First name"
-        formikError={formik?.errors?.firstname}
-        visited={formik?.touched?.firstname}
-      />
-      {formik.touched.firstname && formik.errors.firstname ? (
-        <ErrorText text={formik.errors.firstname} position={`top-[330px]`} />
-      ) : null}
-      <InputField
-        onChange={formik.handleChange}
-        value={formik.values.lastname}
-        type="text"
-        name="lastname"
-        onBlur={formik.handleBlur}
-        position={`top-[500px]`}
-        placeholder="Last name"
-        formikError={formik?.errors?.lastname}
-        visited={formik?.touched?.lastname}
-      />
-      {formik.touched.lastname && formik.errors.lastname ? (
-        <ErrorText text={formik.errors.lastname} position={`top-[445px]`} />
-      ) : null}
-      <InputField
-        onChange={formik.handleChange}
-        value={formik.values.email}
-        type="email"
-        name="email"
-        onBlur={formik.handleBlur}
-        position={`top-[610px]`}
-        placeholder="Email"
-        formikError={formik?.errors?.email}
-        visited={formik?.touched?.email}
-      />
-      {formik.touched.email && formik.errors.email ? (
-        <ErrorText text={formik.errors.email} position={`top-[560px]`} />
-      ) : null}
-      <InputField
-        onChange={formik.handleChange}
-        value={formik.values.number}
-        type="number"
-        name="number"
-        onBlur={formik.handleBlur}
-        position={`top-[730px]`}
-        placeholder="Number"
-        formikError={formik?.errors?.number}
-        visited={formik?.touched?.number}
-      />
-      {formik.touched.number && formik.errors.number ? (
-        <ErrorText text={formik.errors.number} position={`top-[675px]`} />
-      ) : null}
-      <NextButton position={`absolute left-48 top-[800px]`} />
-    </form>
+      <Form className="flex flex-col">
+        <div className="mb-6">
+          <Field
+            type="text"
+            name="firstname"
+            className={`${reusableStylesField} top-[385px] `}
+            placeholder="First name"
+          />
+          <ErrorMessage
+            name="firstname"
+            component="div"
+            className={`${reusableStylesError} top-[330px]`}
+          />
+
+          <Field
+            type="text"
+            name="lastname"
+            className={`${reusableStylesField} top-[500px]`}
+            placeholder="Last name"
+          />
+          <ErrorMessage
+            name="lastname"
+            component="div"
+            className={`${reusableStylesError} top-[445px]`}
+          />
+
+          <Field
+            type="email"
+            name="email"
+            className={`${reusableStylesField} top-[610px]`}
+            placeholder="Email address"
+          />
+          <ErrorMessage
+            name="email"
+            component="div"
+            className={`${reusableStylesError} top-[560px]`}
+          />
+
+          <Field
+            type="number"
+            name="number"
+            className={`${reusableStylesField} top-[730px]`}
+            placeholder="Phone number"
+          />
+          <ErrorMessage
+            name="number"
+            component="div"
+            className={`${reusableStylesError} top-[675px]`}
+          />
+
+          <NextButton type="submit" position={`absolute left-48 top-[800px]`} />
+        </div>
+      </Form>
+    </Formik>
   );
 };
 
