@@ -5,7 +5,7 @@ const NextButton = ({ position }) => {
     <div className="mb-6 ">
       <button
         type="submit"
-        className={` ${position} text-redBerry border border-red-600 hover:bg-red-500 hover:text-white focus:ring-4 focus:ring-red-500 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800`}
+        className={` ${position} text-redBerry border border-red-300 hover:bg-red-600 hover:text-white focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800`}
       >
         <svg
           className="w-5 h-5"

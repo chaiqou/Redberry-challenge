@@ -33,7 +33,14 @@ const validationSchema = Yup.object({
     .required(
       "This field is required , Please fill things up and try submitting again"
     ),
-  number: Yup.string().phone("GE", "Please enter a valid phone number"),
+  number: Yup.string()
+    .phone(
+      "GE",
+      "Please enter a valid phone number example: (+995 555 444 333) "
+    )
+    .required(
+      "This field is required , Please fill things up and try submitting again"
+    ),
 });
 
 // COMPONENT !!!
@@ -43,7 +50,7 @@ const PersonalForm = () => {
   // dasabmitebis shemdeg tu ra moxdeba tu yvela field sheesabameba motxovnebs
 
   const onSubmit = (values) => {
-    navigate("/covid");
+    navigate("/technical");
   };
 
   return (

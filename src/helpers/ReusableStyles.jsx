@@ -5,3 +5,6 @@ dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-b
 
 // REUSABLE STYLES FOR ERROR MESSAGE
 export const reusableStylesError = ` absolute font-medium left-[197px] p-3 mb-3 text-sm text-redBerry  bg-red-100 rounded-lg dark:bg-red-600 dark:text-red-800`;
+
+// REUSABLE COVID HEADER STYLES
+export const reusableHeaderStyles = `absolute w-[788px] top-[72px] h-[175px] text-redBerry font-['Rowdies'] font-normal non-italic text-6xl leading-[79px] flex items-center text-center`;
