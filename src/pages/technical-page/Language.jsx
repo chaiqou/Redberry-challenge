@@ -1,6 +1,3 @@
-import React from "react";
-import "./experience.css";
-
 const Language = ({ skills, experience }) => {
   return (
     <div>

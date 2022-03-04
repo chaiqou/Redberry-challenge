@@ -38,15 +38,15 @@ const TechnicalForm = () => {
 
   const navigate = useNavigate();
 
+  console.log(userValues);
+
   // dasabmitebis shemdeg ra moxdeba am shemtxvevashi stateshi vinaxavt useris mier sheyvanil valueebs
 
   const onSubmit = (values) => {
-    setUserValues([values]);
+    setUserValues((prevState) => {
+      return [...prevState, values];
+    });
   };
-
-  if (userValues.length !== 0) {
-    console.log(userValues);
-  }
 
   // vawvdit dropdown menius apidan wamogebul datas
 
