@@ -58,7 +58,7 @@ const PersonalForm = () => {
   return (
     <Formik
       onSubmit={onSubmit}
-      initialValues={formValues || initialValues}
+      initialValues={initialValues}
       validationSchema={validationSchema}
       validateOnChange={false}
     >

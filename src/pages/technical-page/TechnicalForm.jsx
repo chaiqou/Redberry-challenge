@@ -7,6 +7,7 @@ import {
   reusableStylesError,
 } from "../../helpers/ReusableStyles";
 import Axios from "axios";
+import AddButton from "../../components/AddButton";
 
 const initialValues = {
   // sawyisi value stateebi sadac aisaxeba validaciis dros sheyvanili user informacia
@@ -16,17 +17,24 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   skills: Yup.string().required(
-    "This field is required! Please select minimum one skill."
+    "This field is required , Please fill things up and try submitting again"
   ),
-  experience: Yup.string().required(),
+  experience: Yup.number()
+    .min(1)
+    .max(99)
+    .positive("Only positive numbers required")
+    .required(
+      "This field is required , Please fill things up and try submitting again"
+    ),
 });
 
 const TechnicalForm = () => {
   const [options, setOptions] = useState([]);
+  const [userValues, setUserValues] = useState([]);
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    navigate("/covid");
+    console.log(values);
   };
 
   useEffect(() => {
@@ -37,20 +45,17 @@ const TechnicalForm = () => {
     );
   }, []);
 
-  console.log(options);
-
   return (
     <div className={`mb-6`}>
       <Formik
         onSubmit={onSubmit}
         initialValues={initialValues}
         validationSchema={validationSchema}
-        validateOnChange={false}
       >
         <Form className="flex flex-col">
           <Field
             name="skills"
-            component="select"
+            as="select"
             className={`${reusableStylesField} top-[366px]`}
             placeholder="Skills"
           >
@@ -70,7 +75,20 @@ const TechnicalForm = () => {
             component="div"
             className={`${reusableStylesError} top-[314px]`}
           />
-          <button type="submit">submit</button>
+          <Field
+            name="experience"
+            type="number"
+            placeholder="Experience duration in years"
+            className={`${reusableStylesField} top-[471px]`}
+          ></Field>
+          <ErrorMessage
+            name="experience"
+            component="div"
+            className={`${reusableStylesError} top-[420px]`}
+          />
+          <AddButton position={`top-[534px] left-[440px]`}>
+            Add Programming Language
+          </AddButton>
         </Form>
       </Formik>
     </div>
