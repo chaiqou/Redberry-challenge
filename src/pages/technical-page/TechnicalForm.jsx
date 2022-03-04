@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Field, ErrorMessage, Formik, Form } from "formik";
+import { Field, ErrorMessage, Formik, Form, FieldArray } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import {
@@ -8,12 +8,16 @@ import {
 } from "../../helpers/ReusableStyles";
 import Axios from "axios";
 import AddButton from "../../components/AddButton";
+import LanguagesList from "./LanguagesList";
 
 const initialValues = {
   // sawyisi value stateebi sadac aisaxeba validaciis dros sheyvanili user informacia
+
   skills: "",
   experience: "",
 };
+
+// validation for formik
 
 const validationSchema = Yup.object({
   skills: Yup.string().required(
@@ -31,11 +35,20 @@ const validationSchema = Yup.object({
 const TechnicalForm = () => {
   const [options, setOptions] = useState([]);
   const [userValues, setUserValues] = useState([]);
+
   const navigate = useNavigate();
 
+  // dasabmitebis shemdeg ra moxdeba am shemtxvevashi stateshi vinaxavt useris mier sheyvanil valueebs
+
   const onSubmit = (values) => {
-    console.log(values);
+    setUserValues([values]);
   };
+
+  if (userValues.length !== 0) {
+    console.log(userValues);
+  }
+
+  // vawvdit dropdown menius apidan wamogebul datas
 
   useEffect(() => {
     Axios.get("https://bootcamp-2022.devtest.ge/api/skills").then(
@@ -86,9 +99,14 @@ const TechnicalForm = () => {
             component="div"
             className={`${reusableStylesError} top-[420px]`}
           />
-          <AddButton position={`top-[534px] left-[440px]`}>
+
+          <AddButton
+            onClick={(e) => e.preventDefault()}
+            position={`top-[534px] left-[440px]`}
+          >
             Add Programming Language
           </AddButton>
+          <LanguagesList userValues={userValues} />
         </Form>
       </Formik>
     </div>

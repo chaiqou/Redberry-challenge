@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { reusableHeaderStyles } from "../../helpers/ReusableStyles";
 import SplitContainer from "../../components/SplitContainer";
 import TextContainer from "../../components/TextContainer";
@@ -8,6 +8,7 @@ const Technical = () => {
   useEffect(() => {
     document.title = "Redberry - Technical";
   }, []);
+
   return (
     <SplitContainer>
       <h1 className={`${reusableHeaderStyles} left-[115px]`}>
