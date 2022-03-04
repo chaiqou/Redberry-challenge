@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import NextButton from "../../components/NextButton";
@@ -46,6 +47,7 @@ const validationSchema = Yup.object({
 // COMPONENT !!!
 
 const PersonalForm = () => {
+  const [formValues, setFormValues] = useState(null);
   const navigate = useNavigate();
   // dasabmitebis shemdeg tu ra moxdeba tu yvela field sheesabameba motxovnebs
 
@@ -56,8 +58,9 @@ const PersonalForm = () => {
   return (
     <Formik
       onSubmit={onSubmit}
-      initialValues={initialValues}
+      initialValues={formValues || initialValues}
       validationSchema={validationSchema}
+      validateOnChange={false}
     >
       <Form className="flex flex-col">
         <div className="mb-6">

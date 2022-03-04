@@ -15,7 +15,9 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
-  skills: Yup.string().required("Select minimum 1 skill"),
+  skills: Yup.string().required(
+    "This field is required! Please select minimum one skill."
+  ),
   experience: Yup.string().required(),
 });
 
@@ -43,17 +45,19 @@ const TechnicalForm = () => {
         onSubmit={onSubmit}
         initialValues={initialValues}
         validationSchema={validationSchema}
+        validateOnChange={false}
       >
         <Form className="flex flex-col">
           <Field
             name="skills"
-            as="select"
+            component="select"
             className={`${reusableStylesField} top-[366px]`}
             placeholder="Skills"
           >
+            <option defaultValue>Skills</option>
             {options.map((option) => (
               <option
-                className="h-3 rounded-lg"
+                className="absolute w-3 h-3"
                 key={option.id}
                 value={option.title}
               >
@@ -64,8 +68,9 @@ const TechnicalForm = () => {
           <ErrorMessage
             name="skills"
             component="div"
-            className={`${reusableStylesError} top-[344px]`}
+            className={`${reusableStylesError} top-[314px]`}
           />
+          <button type="submit">submit</button>
         </Form>
       </Formik>
     </div>
