@@ -17,7 +17,7 @@ const LanguagesList = ({ userValues, setUserValues }) => {
 
   return (
     <div
-      className={`flex justify-center items-center flex-col h-[140px] w-68 absolute left-[180px] top-[650px]`}
+      className={`flex justify-center items-center flex-col h-[145px] w-68 absolute left-[180px] top-[650px]`}
     >
       <ul className=" w-[490px] list-none ">
         {UniqueFilteredArray.map((userValue) => (
