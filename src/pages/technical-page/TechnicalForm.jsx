@@ -38,8 +38,6 @@ const TechnicalForm = () => {
 
   const navigate = useNavigate();
 
-  console.log(userValues);
-
   // dasabmitebis shemdeg ra moxdeba am shemtxvevashi stateshi vinaxavt useris mier sheyvanil valueebs
 
   const onSubmit = (values) => {
@@ -106,7 +104,10 @@ const TechnicalForm = () => {
           >
             Add Programming Language
           </AddButton>
-          <LanguagesList userValues={userValues} />
+          <LanguagesList
+            userValues={userValues}
+            setUserValues={setUserValues}
+          />
         </Form>
       </Formik>
     </div>
