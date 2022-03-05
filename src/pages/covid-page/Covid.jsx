@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import SplitContainer from "../../components/SplitContainer";
 import TextContainer from "../../components/TextContainer";
 import { reusableHeaderStyles } from "../../helpers/ReusableStyles";
+import FormikContainer from "./FormikContainer";
 
 const Covid = () => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const Covid = () => {
         would love you to see us in the office because we think face-to-face
         communications Zoom meetings. Both on the fun and productivity scales.
       </TextContainer>
+      <FormikContainer />
     </SplitContainer>
   );
 };
