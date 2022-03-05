@@ -57,6 +57,7 @@ module.exports = {
       backgroundColor: {
         mainColor: "#FBF8F9",
         secondaryColor: "#F0F0F0",
+        redBerry: "#FE3B1F",
         blackOverlay: "rgba(0, 0 ,0 ,0.7)",
       },
       keyframes: {

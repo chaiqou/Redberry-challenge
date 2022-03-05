@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Field, ErrorMessage, Formik, Form, FieldArray } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Field, ErrorMessage, Formik, Form } from "formik";
 import * as Yup from "yup";
 import {
   reusableStylesField,
@@ -8,7 +7,8 @@ import {
 } from "../../helpers/ReusableStyles";
 import Axios from "axios";
 import AddButton from "../../components/AddButton";
-import LanguagesList from "./LanguagesList";
+import LanguagesList from "./LanguageList";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   // sawyisi value stateebi sadac aisaxeba validaciis dros sheyvanili user informacia
@@ -25,7 +25,7 @@ const validationSchema = Yup.object({
   ),
   experience: Yup.number()
     .min(1)
-    .max(99)
+    .max(9)
     .positive("Only positive numbers required")
     .required(
       "This field is required , Please fill things up and try submitting again"
@@ -33,10 +33,9 @@ const validationSchema = Yup.object({
 });
 
 const TechnicalForm = () => {
+  const navigate = useNavigate();
   const [options, setOptions] = useState([]);
   const [userValues, setUserValues] = useState([]);
-
-  const navigate = useNavigate();
 
   // dasabmitebis shemdeg ra moxdeba am shemtxvevashi stateshi vinaxavt useris mier sheyvanil valueebs
 
@@ -45,8 +44,6 @@ const TechnicalForm = () => {
       return [...prevState, values];
     });
   };
-
-  // vawvdit dropdown menius apidan wamogebul datas
 
   useEffect(() => {
     Axios.get("https://bootcamp-2022.devtest.ge/api/skills").then(

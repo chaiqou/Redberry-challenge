@@ -4,9 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 const LanguagesList = ({ userValues, setUserValues }) => {
   return (
     <div
-      className={`flex justify-center items-center flex-col h-[100px] w-34 absolute left-[250px] top-[650px] rounded-lg`}
+      className={`flex justify-center items-center flex-col h-[140px] w-68 absolute left-[180px] top-[650px]`}
     >
-      <ul className="min-w-[30%] list-none rounded-xl">
+      <ul className=" w-[490px] list-none ">
         {userValues.map((userValue) => (
           <Language
             key={uuidv4()}
