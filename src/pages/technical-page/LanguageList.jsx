@@ -7,9 +7,10 @@ const LanguagesList = ({ userValues, setUserValues }) => {
       className={`flex justify-center items-center flex-col h-[140px] w-68 absolute left-[180px] top-[650px]`}
     >
       <ul className=" w-[490px] list-none ">
-        {userValues.map((userValue) => (
+        {userValues.map((userValue, index) => (
           <Language
             key={uuidv4()}
+            userValue={userValue}
             skills={userValue.skills}
             userValues={userValues}
             experience={userValue.experience}

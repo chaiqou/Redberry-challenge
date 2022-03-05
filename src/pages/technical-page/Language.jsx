@@ -1,9 +1,14 @@
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 
-const Language = ({ skills, experience, setUserValues, userValues }) => {
-  console.log(userValues);
+const Language = ({
+  skills,
+  experience,
+  setUserValues,
+  userValues,
+  userValue,
+}) => {
   const deleteHandler = () => {
-    setUserValues(userValues.filter((el) => el.id !== userValues.id));
+    setUserValues(userValues.filter((el) => el.skills !== userValue.skills));
   };
   return (
     <div className="m-2 bg-white text-black flex justify-between items-center transition-all">
@@ -21,5 +26,3 @@ const Language = ({ skills, experience, setUserValues, userValues }) => {
 };
 
 export default Language;
-
-//flex items-center justify-between border-solid border-black  border-2 p-2
