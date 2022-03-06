@@ -1,9 +1,9 @@
-import RadioButtons from "./RadioButtons";
+import WorkRadioButton from "./WorkRadioButton";
 
 const FormikControl = ({ control, ...rest }) => {
   switch (control) {
-    case "radio":
-      return <RadioButtons {...rest} />;
+    case "workRadio":
+      return <WorkRadioButton {...rest} />;
     case "date":
     default:
       return null;

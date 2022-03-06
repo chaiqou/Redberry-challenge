@@ -30,7 +30,7 @@ const FormikContainer = () => {
       {(formik) => (
         <Form>
           <FormikControl
-            control="radio"
+            control="workRadio"
             label="How would you prefer to work?"
             name="radioOption"
             options={workRadio}

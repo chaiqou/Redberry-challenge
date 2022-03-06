@@ -2,9 +2,9 @@ import React from "react";
 import { Field, ErrorMessage } from "formik";
 import { reusableStylesError } from "../../helpers/ReusableStyles";
 
-const RadioButtons = ({ label, name, options, rest }) => {
+const WorkRadioButton = ({ label, name, options, rest }) => {
   return (
-    <div className="mb-[20px] flex justify-center flex-col absolute  w-[645px] h-[157px] left-[166px] top-[301px]">
+    <div className="mb-[10px] flex justify-center flex-col absolute  w-[645px] h-[157px] left-[166px] top-[301px]">
       <label className="mb-[20px] font-['Montserrat'] h-[52px] font-normal text-[22px] leading-[12px] flex items-center  ">
         {label}
       </label>
@@ -34,11 +34,13 @@ const RadioButtons = ({ label, name, options, rest }) => {
           });
         }}
       </Field>
-      <ErrorMessage component="div" name={name} />
+      <ErrorMessage
+        component="div"
+        name={name}
+        className={`${reusableStylesError} top-[350px]`}
+      />
     </div>
   );
 };
 
-export default RadioButtons;
-
-// absolute  w-[645px] h-[157px] left-[166px] top-[301px]
+export default WorkRadioButton;
