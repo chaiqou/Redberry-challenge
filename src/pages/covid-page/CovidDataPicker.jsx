@@ -1,31 +1,28 @@
-import { ErrorMessage, Field } from "formik";
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
+import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
+import { TextField } from "@material-ui/core";
+import { useField } from "formik";
 
-const CovidDataPicker = ({ label, name, ...rest }) => {
-  return (
-    <div className="">
-      <label className="" htmlFor={name}>
-        {label}
-      </label>
-      <Field className="" name={name}>
-        {({ form, field }) => {
-          const { setFieldValue } = form;
-          const { value } = field;
-          return (
-            <DatePicker
-              {...field}
-              id={name}
-              {...rest}
-              selected={value}
-              onChange={(val) => setFieldValue(name, val)}
-            />
-          );
-        }}
-      </Field>
-    </div>
-  );
+const CovidDatePicker = ({ name, ...otherProps }) => {
+  const [field, meta] = useField(name);
+
+  const configDateTimePicker = {
+    ...field,
+    ...otherProps,
+    type: "date",
+    variant: "outlined",
+    fullWidth: false,
+    InputLabelProps: {
+      shrink: true,
+    },
+  };
+
+  if (meta && meta.touched && meta.error) {
+    configDateTimePicker.error = true;
+    configDateTimePicker.helperText = meta.error;
+  }
+
+  return <TextField {...configDateTimePicker} />;
 };
 
-export default CovidDataPicker;
+export default CovidDatePicker;
