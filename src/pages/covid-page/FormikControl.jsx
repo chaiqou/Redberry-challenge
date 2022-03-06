@@ -1,5 +1,6 @@
 import WorkRadioButton from "./WorkRadioButton";
 import CovidRadioButton from "./CovidRadioButton";
+import CovidDataPicker from "./CovidDataPicker";
 
 // control component for form types
 
@@ -9,6 +10,8 @@ const FormikControl = ({ control, ...rest }) => {
       return <WorkRadioButton {...rest} />;
     case "covidRadio":
       return <CovidRadioButton {...rest} />;
+    case "date":
+      return <CovidDataPicker {...rest} />;
     default:
       return null;
   }

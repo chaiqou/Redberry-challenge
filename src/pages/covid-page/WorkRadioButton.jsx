@@ -10,7 +10,6 @@ const WorkRadioButton = ({ label, name, options, rest }) => {
       </label>
       <Field name={name}>
         {({ field }) => {
-          console.log(field);
           return options.map((option) => {
             return (
               <div className="form-check" key={option.key}>

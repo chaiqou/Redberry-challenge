@@ -15,17 +15,19 @@ const FormikContainer = () => {
   ];
 
   const covidRadio = [
-    { key: "Yes", value: "true" },
-    { key: "No", value: "false" },
+    { key: "Yes", value: "Yes" },
+    { key: "No", value: "No" },
   ];
 
   const initialValues = {
     workRadio: "",
     covidRadio: "",
+    covidDate: null,
   };
   const validationSchema = Yup.object({
     workRadio: Yup.string().required("At least one checkbox is required"),
     covidRadio: Yup.string().required("Required"),
+    covidDate: Yup.date().required("Required").nullable(),
   });
 
   const navigate = useNavigate();
@@ -54,6 +56,7 @@ const FormikContainer = () => {
             name="covidRadio"
             options={covidRadio}
           />
+          <FormikControl control="date" label="When?" name="covidDate" />
           <NextButton />
         </Form>
       )}

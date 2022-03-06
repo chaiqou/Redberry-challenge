@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import SplitContainer from "../../components/SplitContainer";
 import TextContainer from "../../components/TextContainer";
 import { reusableHeaderStyles } from "../../helpers/ReusableStyles";
+
 import FormikContainer from "./FormikContainer";
 
 const Covid = () => {

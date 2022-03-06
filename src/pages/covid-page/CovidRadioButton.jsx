@@ -10,7 +10,6 @@ const CovidRadioButton = ({ label, name, options, rest }) => {
       </label>
       <Field name={name}>
         {({ field }) => {
-          console.log(field, options);
           return options.map((option) => {
             return (
               <div className="form-check" key={option.key}>
