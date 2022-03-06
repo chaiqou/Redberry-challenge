@@ -2,9 +2,9 @@ import React from "react";
 import { Field, ErrorMessage } from "formik";
 import { reusableStylesError } from "../../helpers/ReusableStyles";
 
-const CovidRadioButton = ({ label, name, options, rest }) => {
+const VaccineRadioButton = ({ label, name, options, rest }) => {
   return (
-    <div className="mb-[10px] flex justify-center flex-col absolute  w-[445px] h-[157px] left-[196px] top-[409px]">
+    <div className="mb-[10px] flex justify-center flex-col absolute  w-[445px] h-[157px] left-[196px] top-[690px]">
       <label className="mb-[10px] font-['Montserrat'] h-[52px] font-normal text-[22px] leading-[12px] flex items-center  ">
         {label}
       </label>
@@ -43,7 +43,4 @@ const CovidRadioButton = ({ label, name, options, rest }) => {
   );
 };
 
-export default CovidRadioButton;
-
-// input =>>  className="form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-redBerry
-// checked:border-[#FE3B1F]  focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+export default VaccineRadioButton;
