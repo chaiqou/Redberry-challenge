@@ -11,13 +11,13 @@ const Covid = () => {
 
   return (
     <SplitContainer>
-      <h1 className={`${reusableHeaderStyles} left-[200px] top-[61px]`}>
+      <h1 className={`${reusableHeaderStyles} left-[300px] top-[61px]`}>
         Covid Stuff
       </h1>
-      <h1 className={`${reusableHeaderStyles} left-[1066px] top-[61px]`}>
+      <h1 className={`${reusableHeaderStyles} left-[1096px] top-[61px]`}>
         Redberry Covid Policies
       </h1>
-      <TextContainer position={`left-[1066px] top-[251px]`}>
+      <TextContainer position={`left-[1096px] top-[251px]`}>
         As this infamous pandemic took over the world, we adjusted our working
         practices so that our employees can be as safe and comfortable as
         possible. We have a hybrid work environment, so you can either work from

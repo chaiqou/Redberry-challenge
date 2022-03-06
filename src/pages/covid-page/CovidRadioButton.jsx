@@ -2,15 +2,15 @@ import React from "react";
 import { Field, ErrorMessage } from "formik";
 import { reusableStylesError } from "../../helpers/ReusableStyles";
 
-const WorkRadioButton = ({ label, name, options, rest }) => {
+const CovidRadioButton = ({ label, name, options, rest }) => {
   return (
-    <div className="mb-[10px] flex justify-center flex-col absolute  w-[645px] h-[157px] left-[196px] top-[250px]">
-      <label className="mb-[5px] font-['Montserrat'] h-[52px] font-normal text-[22px] leading-[12px] flex items-center  ">
+    <div className="mb-[10px] flex justify-center flex-col absolute  w-[445px] h-[157px] left-[196px] top-[409px]">
+      <label className="mb-[10px] font-['Montserrat'] h-[52px] font-normal text-[22px] leading-[12px] flex items-center  ">
         {label}
       </label>
       <Field name={name}>
         {({ field }) => {
-          console.log(field);
+          console.log(field, options);
           return options.map((option) => {
             return (
               <div className="form-check" key={option.key}>
@@ -44,4 +44,4 @@ const WorkRadioButton = ({ label, name, options, rest }) => {
   );
 };
 
-export default WorkRadioButton;
+export default CovidRadioButton;

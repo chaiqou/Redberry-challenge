@@ -3,23 +3,36 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import NextButton from "../../components/NextButton";
 import FormikControl from "./FormikControl";
+import { useNavigate } from "react-router-dom";
 
 // Reusable formik sceleton
 
 const FormikContainer = () => {
   const workRadio = [
-    { key: "From Sairme Office", value: "rOption1" },
-    { key: "From Home", value: "rOption2" },
-    { key: "Hybrid", value: "rOption3" },
+    { key: "From Sairme Office", value: "From Sairme Office" },
+    { key: "From Home", value: "From Home" },
+    { key: "Hybrid", value: "Hybrid" },
+  ];
+
+  const covidRadio = [
+    { key: "Yes", value: "true" },
+    { key: "No", value: "false" },
   ];
 
   const initialValues = {
     workRadio: "",
+    covidRadio: "",
   };
   const validationSchema = Yup.object({
-    workRadio: Yup.string().required("Required"),
+    workRadio: Yup.string().required("At least one checkbox is required"),
+    covidRadio: Yup.string().required("Required"),
   });
-  const onSubmit = (values) => console.log(values);
+
+  const navigate = useNavigate();
+
+  const onSubmit = (values) => {
+    console.log(values);
+  };
 
   return (
     <Formik
@@ -32,10 +45,16 @@ const FormikContainer = () => {
           <FormikControl
             control="workRadio"
             label="How would you prefer to work?"
-            name="radioOption"
+            name="workRadio"
             options={workRadio}
           />
-          <NextButton type="submit" position={`absolute left-48 top-[800px]`} />
+          <FormikControl
+            control="covidRadio"
+            label="Did you contact covid 19? :("
+            name="covidRadio"
+            options={covidRadio}
+          />
+          <NextButton />
         </Form>
       )}
     </Formik>
