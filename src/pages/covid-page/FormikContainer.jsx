@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import NextButton from "../../components/NextButton";
 import FormikControl from "./FormikControl";
 import { useNavigate } from "react-router-dom";
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Typography } from "@material-ui/core";
 
 const FormikContainer = () => {
   const workRadio = [
@@ -28,12 +28,14 @@ const FormikContainer = () => {
     covidRadio: "",
     vaccineRadio: "",
     covidDate: "",
+    vaccineDate: "",
   };
   const validationSchema = Yup.object({
     workRadio: Yup.string().required("Required!"),
     covidRadio: Yup.string().required("Required!"),
     vaccineRadio: Yup.string().required("Required!"),
     covidDate: Yup.date().required("Required!").nullable(),
+    vaccineDate: Yup.date().required("Required!").nullable(),
   });
 
   const navigate = useNavigate();
@@ -70,18 +72,23 @@ const FormikContainer = () => {
               </Grid>
               <Grid
                 container
-                spacing={0}
+                spacing={5}
                 direction="column"
                 alignItems="center"
                 justifyContent="center"
                 style={{
                   minHeight: "110vh",
                   minWidth: "10vw",
+                  position: "absolute",
+
+                  left: "21rem",
+                  top: "20px",
                 }}
                 item
-                xs={2}
+                xs={4}
               >
-                <FormikControl control="date" label="When?" name="covidDate" />
+                <Typography className="text-xl">Contact date?</Typography>
+                <FormikControl control="date" label="Time" name="covidDate" />
               </Grid>
               <Grid item xs={12}>
                 <FormikControl
@@ -91,10 +98,28 @@ const FormikContainer = () => {
                   options={vaccineRadio}
                 />
               </Grid>
+
+              <Grid
+                container
+                spacing={0}
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+                style={{
+                  minHeight: "150vh",
+                  minWidth: "10vw",
+                }}
+                item
+                xs={6}
+              >
+                <Typography>When did you get your covid Vaccine?</Typography>
+                <FormikControl control="date" label="Time" name="vaccineDate" />
+              </Grid>
+
               <Grid item xs={12}>
                 <NextButton
                   type="submit"
-                  position={`absolute left-68 top-[900px]`}
+                  position={`absolute left-68  top-[980px]`}
                 />
               </Grid>
             </Grid>
@@ -106,3 +131,8 @@ const FormikContainer = () => {
 };
 
 export default FormikContainer;
+
+//   position: "absolute",
+//left: "17rem",
+//top: "200px",
+// }}

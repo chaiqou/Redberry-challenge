@@ -1,5 +1,4 @@
 import React from "react";
-import "react-datepicker/dist/react-datepicker.css";
 import { TextField } from "@material-ui/core";
 import { useField } from "formik";
 
@@ -10,10 +9,12 @@ const CovidDatePicker = ({ name, ...otherProps }) => {
     ...field,
     ...otherProps,
     type: "date",
+
     variant: "outlined",
-    fullWidth: false,
+    fullWidth: true,
     InputLabelProps: {
       shrink: true,
+      variant: "standard",
     },
   };
 
