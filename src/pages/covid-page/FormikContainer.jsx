@@ -41,7 +41,7 @@ const FormikContainer = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    console.log(values);
+    navigate("/redberry");
   };
 
   return (
@@ -131,8 +131,3 @@ const FormikContainer = () => {
 };
 
 export default FormikContainer;
-
-//   position: "absolute",
-//left: "17rem",
-//top: "200px",
-// }}
