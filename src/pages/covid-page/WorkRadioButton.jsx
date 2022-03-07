@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 import { reusableStylesError } from "../../helpers/ReusableStyles";
+import { Typography } from "@material-ui/core";
 
 const WorkRadioButton = ({ label, name, options, rest }) => {
   return (
@@ -35,9 +36,9 @@ const WorkRadioButton = ({ label, name, options, rest }) => {
         }}
       </Field>
       <ErrorMessage
-        component="div"
+        component={"div"}
         name={name}
-        className={`${reusableStylesError} top-[350px]`}
+        className={`${reusableStylesError} top-[10px] left-[310px]`}
       />
     </div>
   );

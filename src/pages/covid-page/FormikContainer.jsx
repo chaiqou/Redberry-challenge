@@ -30,10 +30,10 @@ const FormikContainer = () => {
     covidDate: "",
   };
   const validationSchema = Yup.object({
-    workRadio: Yup.string().required("At least one checkbox is required"),
-    covidRadio: Yup.string().required("Required"),
-    vaccineRadio: Yup.string().required("Required"),
-    covidDate: Yup.date().required("This Field is required ").nullable(),
+    workRadio: Yup.string().required("Required!"),
+    covidRadio: Yup.string().required("Required!"),
+    vaccineRadio: Yup.string().required("Required!"),
+    covidDate: Yup.date().required("Required!").nullable(),
   });
 
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ const FormikContainer = () => {
       >
         {(formik) => (
           <Form>
-            <Grid container spacing={2}>
+            <Grid container spacing={4}>
               <Grid item xs={12}>
                 <FormikControl
                   control="workRadio"

@@ -37,7 +37,7 @@ const VaccineRadioButton = ({ label, name, options, rest }) => {
       <ErrorMessage
         component="div"
         name={name}
-        className={`${reusableStylesError} top-[350px]`}
+        className={`${reusableStylesError} top-[20px] left-[310px]`}
       />
     </div>
   );
