@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 // components
 import SplitContainer from "../../components/SplitContainer";
 import TextContainer from "../../components/TextContainer";

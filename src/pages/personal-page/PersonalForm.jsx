@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import React from "react";
+
 import NextButton from "../../components/NextButton";
 import {
   reusableStylesField,
@@ -48,6 +50,8 @@ const validationSchema = Yup.object({
 const PersonalForm = () => {
   const navigate = useNavigate();
   // dasabmitebis shemdeg tu ra moxdeba tu yvela field sheesabameba motxovnebs
+
+  let handlePageChange;
 
   const onSubmit = (values) => {
     navigate("/technical");

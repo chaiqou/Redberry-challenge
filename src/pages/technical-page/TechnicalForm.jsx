@@ -43,6 +43,8 @@ const TechnicalForm = () => {
     setUserValues((prevState) => {
       return [...prevState, values];
     });
+
+    if (userValues.length + 1 === 3) navigate("/covid");
   };
 
   useEffect(() => {
@@ -95,11 +97,8 @@ const TechnicalForm = () => {
             className={`${reusableStylesError} top-[420px]`}
           />
 
-          <AddButton
-            onClick={(e) => e.preventDefault()}
-            position={`top-[534px] left-[440px]`}
-          >
-            Add Programming Language
+          <AddButton position={`top-[534px] left-[440px]`}>
+            {userValues.length < 2 ? "Add Programming Language" : "Next Page"}
           </AddButton>
           <LanguagesList
             userValues={userValues}

@@ -26,7 +26,7 @@ const FormikContainer = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    console.log(values);
+    navigate("/submit");
   };
 
   return (
