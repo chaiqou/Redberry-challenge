@@ -15,10 +15,12 @@ const FormikContainer = () => {
   const initialValues = {
     devtalkRadio: "",
     devTextarea: "",
+    somethingTextarea: "",
   };
   const validationSchema = Yup.object({
     devtalkRadio: Yup.string().required("Required!"),
     devTextarea: Yup.string().required("Required!"),
+    somethingTextarea: Yup.string().required("Required!"),
   });
 
   const navigate = useNavigate();
@@ -46,6 +48,11 @@ const FormikContainer = () => {
               control="devTextarea"
               label="What would you speak about at Devtalk?"
               name="devTextarea"
+            />
+            <FormikControl
+              control="somethingTextarea"
+              name="somethingTextarea"
+              label="Tell us something special"
             />
             <NextButton
               type="submit"
