@@ -12,20 +12,20 @@ import * as Yup from "yup";
 
 const initialValues = {
   // sawyisi value stateebi sadac aisaxeba validaciis dros sheyvanili user informacia
-  firstname: "",
-  lastname: "",
+  first_name: "",
+  last_name: "",
   email: "",
-  number: "",
+  phone: "",
 };
 
 // validationistvis sachiro motxovnebi romlebic unda daakmayofilos userma sxva gverdze gadasvlis dros
 const validationSchema = Yup.object({
-  firstname: Yup.string()
+  first_name: Yup.string()
     .min(2)
     .required(
       "This field is required , Please fill things up and try submitting again"
     ),
-  lastname: Yup.string()
+  last_name: Yup.string()
     .min(2)
     .required(
       "This field is required , Please fill things up and try submitting again"
@@ -35,7 +35,7 @@ const validationSchema = Yup.object({
     .required(
       "This field is required , Please fill things up and try submitting again"
     ),
-  number: Yup.string()
+  phone: Yup.string()
     .phone(
       "GE",
       "Please enter a valid phone number example: (+995 555 444 333) "
@@ -49,12 +49,10 @@ const validationSchema = Yup.object({
 
 const PersonalForm = () => {
   const navigate = useNavigate();
-  // dasabmitebis shemdeg tu ra moxdeba tu yvela field sheesabameba motxovnebs
 
-  let handlePageChange;
-
-  const onSubmit = (values) => {
+  const onSubmit = async (values) => {
     navigate("/technical");
+    localStorage.setItem("name", JSON.stringify(values));
   };
 
   return (
@@ -68,24 +66,24 @@ const PersonalForm = () => {
         <div className="mb-6">
           <Field
             type="text"
-            name="firstname"
+            name="first_name"
             className={`${reusableStylesField} top-[385px] `}
             placeholder="First name"
           />
           <ErrorMessage
-            name="firstname"
+            name="first_name"
             component="div"
             className={`${reusableStylesError} top-[330px]`}
           />
 
           <Field
             type="text"
-            name="lastname"
+            name="last_name"
             className={`${reusableStylesField} top-[500px]`}
             placeholder="Last name"
           />
           <ErrorMessage
-            name="lastname"
+            name="last_name"
             component="div"
             className={`${reusableStylesError} top-[445px]`}
           />
@@ -104,12 +102,12 @@ const PersonalForm = () => {
 
           <Field
             type="number"
-            name="number"
+            name="phone"
             className={`${reusableStylesField} top-[730px]`}
             placeholder="Phone number"
           />
           <ErrorMessage
-            name="number"
+            name="phone"
             component="div"
             className={`${reusableStylesError} top-[675px]`}
           />

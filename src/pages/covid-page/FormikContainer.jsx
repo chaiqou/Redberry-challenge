@@ -41,6 +41,7 @@ const FormikContainer = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
+    localStorage.setItem("covid", JSON.stringify(values));
     navigate("/redberry");
   };
 

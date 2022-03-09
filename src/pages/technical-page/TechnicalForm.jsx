@@ -45,6 +45,8 @@ const TechnicalForm = () => {
     });
 
     if (userValues.length + 1 === 3) navigate("/covid");
+
+    localStorage.setItem("technical", JSON.stringify(values));
   };
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import NextButton from "../../components/NextButton";
 import FormikControl from "./FormikControl";
 import { useNavigate } from "react-router-dom";
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 
 const FormikContainer = () => {
   const devtalkRadio = [
@@ -26,6 +26,7 @@ const FormikContainer = () => {
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
+    localStorage.setItem("devtalk", JSON.stringify(values));
     navigate("/submit");
   };
 
