@@ -32,6 +32,9 @@ const SurveyDropdown = () => {
             covidtime={data.had_covid_at}
             vaccinated={data.vaccinated}
             vaccinatedtime={data.vaccinated_at}
+            organizedevtalk={data.will_organize_devtalk}
+            devtalktopic={data.devtalk_topic}
+            somethingspecial={data.something_special}
           />
         ))}
       </div>

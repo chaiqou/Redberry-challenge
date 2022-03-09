@@ -44,14 +44,14 @@ const CovidDisclosure = ({
       </p>
       <div className="absolute left-[140px] top-[800px] flex justify-center border-[#525557] w-[349px] h-[54px] items-center border-2">
         <IoCalendarOutline className="absolute left-[300px] w-[16px] h-[18x] text-redBerry" />
-        <p>{covidtime}</p>
+        <p className="text-[#3A3A3A]">{covidtime}</p>
       </div>
       <p className={`${headersforDisclosure} left-[140px] top-[870px]`}>
         Have you been vaccinated?
       </p>
       <div className="absolute left-[140px] top-[920px] flex justify-center border-[#525557] w-[349px] h-[54px] items-center border-2">
         <IoCalendarOutline className="absolute left-[300px] w-[16px] h-[18x] text-redBerry" />
-        <p>{vaccinatedtime}</p>
+        <p className="text-[#3A3A3A]">{vaccinatedtime}</p>
       </div>
     </>
   );

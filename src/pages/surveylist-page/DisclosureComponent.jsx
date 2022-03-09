@@ -4,6 +4,7 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 import PersonalDisclosure from "./PersonalDisclosure";
 import SkillsDisclosure from "./SkillsDisclosure";
 import CovidDisclosure from "./CovidDisclosure";
+import InsightDisclosure from "./InsightDisclosure";
 
 const DisclosureComponent = ({
   email,
@@ -17,6 +18,9 @@ const DisclosureComponent = ({
   covidtime,
   vaccinated,
   vaccinatedtime,
+  organizedevtalk,
+  devtalktopic,
+  somethingspecial,
 }) => {
   return (
     <Disclosure>
@@ -44,6 +48,11 @@ const DisclosureComponent = ({
               covidtime={covidtime}
               vaccinated={vaccinated}
               vaccinatedtime={vaccinatedtime}
+            />
+            <InsightDisclosure
+              organizedevtalk={organizedevtalk}
+              devtalktopic={devtalktopic}
+              somethingspecial={somethingspecial}
             />
           </Disclosure.Panel>
         </>
