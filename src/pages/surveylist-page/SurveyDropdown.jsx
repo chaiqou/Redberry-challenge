@@ -18,7 +18,17 @@ const SurveyDropdown = () => {
   return (
     <div className="w-full absolute top-[180px] left-[300px] px-4 pt-16 ">
       <div className="w-full p-2 mx-auto bg-black rounded-2xl">
-        <DisclosureComponent />
+        {datas.map((data, index) => (
+          <DisclosureComponent
+            key={index}
+            index={index}
+            firstname={data.first_name}
+            lastname={data.last_name}
+            email={data.email}
+            phone={data.phone}
+            experience={data.skills[0].experience}
+          />
+        ))}
       </div>
     </div>
   );

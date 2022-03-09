@@ -14,3 +14,6 @@ export const disclosureHeaders = `absolute w-[288px] h-[37px] font-['Montserrat'
 
 // REUSABLE LABELS FOR DISCLOSURE
 export const labelsforDisclosure = `text-['Montserrat'] italic text-[16px] leading-[15px] font-normal absolute width-[102px] height-[42px] flex items-center text-[#000000]  `;
+
+// REUSABLE VALUES FOR DISCLOSURE
+export const valuesforDisclosure = `absolute width-[140px] height-[24px] font-['Montserrat'] italic font-normal text-[14px] leading-[17px] flex items-center text-[#454545]`;
