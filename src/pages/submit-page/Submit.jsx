@@ -41,49 +41,53 @@ const Submit = () => {
     }
   }, []);
 
-  const parameters = {
-    token: "f2925294-fef9-4ea0-8020-d0998c9c5e54",
-    first_name: name.first_name,
-    last_name: name.last_name,
-    email: name.email,
-    phone: String(name.phone),
-    skills: [
-      {
-        id: "1",
-        experience: technical.experience,
-      },
-    ],
-    work_preference: "from_office",
-    had_covid: true,
-    had_covid_at: covid.had_covid_at,
-    vaccinated: true,
-    vaccinated_at: covid.vaccinated_at,
-    will_organize_devtalk: true,
-    devtalk_topic: devtalk.devtalk_topic,
-    something_special: devtalk.something_special,
+  const onClickHandler = () => {
+    const parameters = {
+      token: "0ff1fdf5-3ddb-4602-8d61-8dd42eed0cc8",
+      first_name: name.first_name,
+      last_name: name.last_name,
+      email: name.email,
+      phone: String(name.phone),
+      skills: [
+        {
+          id: "1",
+          experience: technical.experience,
+        },
+      ],
+      work_preference: "from_office",
+      had_covid: true,
+      had_covid_at: covid.had_covid_at,
+      vaccinated: true,
+      vaccinated_at: covid.vaccinated_at,
+      will_organize_devtalk: true,
+      devtalk_topic: devtalk.devtalk_topic,
+      something_special: devtalk.something_special,
+    };
+
+    // f2925294-fef9-4ea0-8020-d0998c9c5e54 old token
+
+    const token = "0ff1fdf5-3ddb-4602-8d61-8dd42eed0cc8";
+
+    const config = { headers: { Authorization: `Bearer ${token}` } };
+
+    axios
+      .post(
+        "https://bootcamp-2022.devtest.ge/api/application",
+        parameters,
+        config
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log("Erreeer", err.response);
+      });
   };
-  const token = "f2925294-fef9-4ea0-8020-d0998c9c5e54";
-
-  // ed47fdb2-a249-4ef2-9467-91d388ea8aaf
-
-  const config = { headers: { Authorization: `Bearer ${token}` } };
-
-  axios
-    .post(
-      "https://bootcamp-2022.devtest.ge/api/application",
-      parameters,
-      config
-    )
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.log("Erreeer", err.response);
-    });
 
   return (
     <div className="h-screen bg-black">
       <Link
+        onClick={onClickHandler}
         to="/thanks"
         className="animate-bounce-in absolute w-[12rem] left-[754px] top-[522px]  text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl
          focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-6 mb-6"
