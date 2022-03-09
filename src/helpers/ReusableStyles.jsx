@@ -8,3 +8,9 @@ export const reusableStylesError = `absolute font-medium left-[197px] p-3 mb-3 t
 
 // REUSABLE COVID HEADER STYLES
 export const reusableHeaderStyles = `absolute w-[788px] top-[72px] h-[175px] text-redBerry font-['Rowdies'] font-normal non-italic text-6xl leading-[79px] flex items-center text-center`;
+
+// REUSABLE HEADERS FOR DISCLOSURE
+export const disclosureHeaders = `absolute w-[288px] h-[37px] font-['Montserrat'] italic text-[18px] leading-[22px] flex items-center underline text-[#FE3B1F]`;
+
+// REUSABLE LABELS FOR DISCLOSURE
+export const labelsforDisclosure = `text-['Montserrat'] italic text-[16px] leading-[15px] font-normal absolute width-[102px] height-[42px] flex items-center text-[#000000]  `;
