@@ -6,9 +6,7 @@ const Submit = () => {
   const [name, setName] = useState({});
   const [covid, setCovid] = useState({});
   const [devtalk, setDevtalk] = useState({});
-  const [technical, setTechnical] = useState([{}]);
-
-  console.log(covid);
+  const [technical, setTechnical] = useState({});
 
   //personal page get data
 
@@ -43,8 +41,6 @@ const Submit = () => {
     }
   }, []);
 
-  console.log(name, covid, devtalk, technical);
-
   const parameters = {
     token: "f2925294-fef9-4ea0-8020-d0998c9c5e54",
     first_name: name.first_name,
@@ -67,6 +63,8 @@ const Submit = () => {
     something_special: devtalk.something_special,
   };
   const token = "f2925294-fef9-4ea0-8020-d0998c9c5e54";
+
+  // ed47fdb2-a249-4ef2-9467-91d388ea8aaf
 
   const config = { headers: { Authorization: `Bearer ${token}` } };
 

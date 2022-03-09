@@ -5,7 +5,7 @@ import CovidPage from "./pages/covid-page/Covid";
 import PersonalPage from "./pages/personal-page/Personal";
 import RadberryPage from "./pages/radberry-page/Radberry";
 import SubmitPage from "./pages/submit-page/Submit";
-import SurveyPage from "./pages/surveylist-page/SurveyList";
+import SurveyPage from "./pages/surveylist-page/SurveyPage";
 import TechnicalPage from "./pages/technical-page/Technical";
 import ThanksPage from "./pages/thanks-page/Thanks";
 
