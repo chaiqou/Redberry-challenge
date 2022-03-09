@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Submit = () => {
   const [name, setName] = useState({});
   const [covid, setCovid] = useState({});
   const [devtalk, setDevtalk] = useState({});
-  const [technical, setTechnical] = useState([]);
+  const [technical, setTechnical] = useState([{}]);
+
+  console.log(covid);
 
   //personal page get data
 
@@ -41,6 +44,44 @@ const Submit = () => {
   }, []);
 
   console.log(name, covid, devtalk, technical);
+
+  const parameters = {
+    token: "f2925294-fef9-4ea0-8020-d0998c9c5e54",
+    first_name: name.first_name,
+    last_name: name.last_name,
+    email: name.email,
+    phone: String(name.phone),
+    skills: [
+      {
+        id: "1",
+        experience: technical.experience,
+      },
+    ],
+    work_preference: "from_office",
+    had_covid: true,
+    had_covid_at: covid.had_covid_at,
+    vaccinated: true,
+    vaccinated_at: covid.vaccinated_at,
+    will_organize_devtalk: true,
+    devtalk_topic: devtalk.devtalk_topic,
+    something_special: devtalk.something_special,
+  };
+  const token = "f2925294-fef9-4ea0-8020-d0998c9c5e54";
+
+  const config = { headers: { Authorization: `Bearer ${token}` } };
+
+  axios
+    .post(
+      "https://bootcamp-2022.devtest.ge/api/application",
+      parameters,
+      config
+    )
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch((err) => {
+      console.log("Erreeer", err.response);
+    });
 
   return (
     <div className="h-screen bg-black">
