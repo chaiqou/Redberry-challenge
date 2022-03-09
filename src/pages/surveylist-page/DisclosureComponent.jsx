@@ -26,7 +26,7 @@ const DisclosureComponent = ({
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex items-center w-[1154px] h-[54px] justify-between  px-4 py-2 text-sm font-medium text-left text-white bg-[#FE3B1F]  focus:outline-none focus-visible:ring  focus-visible:ring-opacity-75">
+          <Disclosure.Button className="flex mb-1 items-center w-[1154px] h-[54px] justify-between px-4 py-4  text-sm font-medium text-left text-white bg-[#FE3B1F]  focus:outline-none focus-visible:ring  focus-visible:ring-opacity-75">
             <span>{index + 1}</span>
             <AiOutlineArrowUp
               className={`${
@@ -34,7 +34,7 @@ const DisclosureComponent = ({
               } w-5 h-5 text-white`}
             />
           </Disclosure.Button>
-          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-black w-[1154px] h-[870px]  bg-white">
+          <Disclosure.Panel className="px-4 overflow-hidden pt-4 pb-2 text-sm text-black w-[1154px] h-[870px]  bg-white">
             <PersonalDisclosure
               firstname={firstname}
               lastname={lastname}

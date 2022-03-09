@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Submit = () => {
@@ -7,6 +8,7 @@ const Submit = () => {
   const [covid, setCovid] = useState({});
   const [devtalk, setDevtalk] = useState({});
   const [technical, setTechnical] = useState({});
+  const navigate = useNavigate();
 
   //personal page get data
 
@@ -43,7 +45,7 @@ const Submit = () => {
 
   const onClickHandler = () => {
     const parameters = {
-      token: "0ff1fdf5-3ddb-4602-8d61-8dd42eed0cc8",
+      token: "191d171b-25f8-4b1c-8bfe-252a8e1e890a",
       first_name: name.first_name,
       last_name: name.last_name,
       email: name.email,
@@ -66,7 +68,7 @@ const Submit = () => {
 
     // f2925294-fef9-4ea0-8020-d0998c9c5e54 old token
 
-    const token = "0ff1fdf5-3ddb-4602-8d61-8dd42eed0cc8";
+    const token = "191d171b-25f8-4b1c-8bfe-252a8e1e890a";
 
     const config = { headers: { Authorization: `Bearer ${token}` } };
 
@@ -82,18 +84,19 @@ const Submit = () => {
       .catch((err) => {
         console.log("Erreeer", err.response);
       });
+
+    if (parameters) navigate("/");
   };
 
   return (
     <div className="h-screen bg-black">
-      <Link
+      <button
         onClick={onClickHandler}
-        to="/thanks"
         className="animate-bounce-in absolute w-[12rem] left-[754px] top-[522px]  text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl
          focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-6 mb-6"
       >
         Submit
-      </Link>
+      </button>
       <Link
         to="/personal"
         className="animate-bounce-in absolute w-[12rem] left-[754px] top-[582px]  text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl

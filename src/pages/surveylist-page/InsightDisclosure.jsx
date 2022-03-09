@@ -31,7 +31,10 @@ const InsightDisclosure = ({
           {devtalktopic}
         </p>
       </div>
-      <div className="absolute left-[700px] top-[853px] flex justify-center border-[#525557] w-[349px] h-[122px] items-center border-2">
+      <p className={`${headersforDisclosure} left-[700px] top-[780px]`}>
+        Tell us somthing special
+      </p>
+      <div className="absolute left-[700px] top-[830px] flex justify-center border-[#525557] w-[349px] h-[122px] items-center border-2">
         <p className="absolute top-[2px] text-[#3A3A3A] left-[3px] w-[357px] h-[32px] font-['Montserrat'] text-[13px] leading-[16px] flex items-center">
           {somethingspecial}
         </p>
