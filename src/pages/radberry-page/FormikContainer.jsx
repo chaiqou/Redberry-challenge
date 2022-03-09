@@ -7,20 +7,20 @@ import { useNavigate } from "react-router-dom";
 import { Container } from "@material-ui/core";
 
 const FormikContainer = () => {
-  const devtalkRadio = [
+  const will_organize_devtalk = [
     { key: "Yes", value: "Yes" },
     { key: "No", value: "No" },
   ];
 
   const initialValues = {
-    devtalkRadio: "",
-    devTextarea: "",
-    somethingTextarea: "",
+    will_organize_devtalk: "",
+    devtalk_topic: "",
+    something_special: "",
   };
   const validationSchema = Yup.object({
-    devtalkRadio: Yup.string().required("Required!"),
-    devTextarea: Yup.string().required("Required!"),
-    somethingTextarea: Yup.string().required("Required!"),
+    will_organize_devtalk: Yup.string().required("Required!"),
+    devtalk_topic: Yup.string().required("Required!"),
+    something_special: Yup.string().required("Required!"),
   });
 
   const navigate = useNavigate();
@@ -40,19 +40,19 @@ const FormikContainer = () => {
         {(formik) => (
           <Form>
             <FormikControl
-              control="devtalkRadio"
+              control="will_organize_devtalk"
               label="Would you attend Devtalks and maybe also organize your own?"
-              name="devtalkRadio"
-              options={devtalkRadio}
+              name="will_organize_devtalk"
+              options={will_organize_devtalk}
             />
             <FormikControl
-              control="devTextarea"
+              control="devtalk_topic"
               label="What would you speak about at Devtalk?"
-              name="devTextarea"
+              name="devtalk_topic"
             />
             <FormikControl
-              control="somethingTextarea"
-              name="somethingTextarea"
+              control="something_special"
+              name="something_special"
               label="Tell us something special"
             />
             <NextButton

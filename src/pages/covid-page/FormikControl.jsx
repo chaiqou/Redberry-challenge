@@ -7,11 +7,11 @@ import VaccineRadioButton from "./VaccineRadioButton";
 
 const FormikControl = ({ control, ...rest }) => {
   switch (control) {
-    case "workRadio":
+    case "work_preference":
       return <WorkRadioButton {...rest} />;
-    case "covidRadio":
+    case "had_covid":
       return <CovidRadioButton {...rest} />;
-    case "vaccineRadio":
+    case "vaccinated":
       return <VaccineRadioButton {...rest} />;
     case "date":
       return <CovidDataPicker {...rest} />;

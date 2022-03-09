@@ -7,35 +7,35 @@ import { useNavigate } from "react-router-dom";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 const FormikContainer = () => {
-  const workRadio = [
+  const work_preference = [
     { key: "From Sairme Office", value: "From Sairme Office" },
     { key: "From Home", value: "From Home" },
     { key: "Hybrid", value: "Hybrid" },
   ];
 
-  const covidRadio = [
+  const had_covid = [
     { key: "Yes", value: "Yes" },
     { key: "No", value: "No" },
   ];
 
-  const vaccineRadio = [
+  const vaccinated = [
     { key: "Yes", value: "Yes1" },
     { key: "No", value: "No1" },
   ];
 
   const initialValues = {
-    workRadio: "",
-    covidRadio: "",
-    vaccineRadio: "",
-    covidDate: "",
-    vaccineDate: "",
+    work_preference: "",
+    had_covid: "",
+    vaccinated: "",
+    had_covid_at: "",
+    vaccinated_at: "",
   };
   const validationSchema = Yup.object({
-    workRadio: Yup.string().required("Required!"),
-    covidRadio: Yup.string().required("Required!"),
-    vaccineRadio: Yup.string().required("Required!"),
-    covidDate: Yup.date().required("Required!").nullable(),
-    vaccineDate: Yup.date().required("Required!").nullable(),
+    work_preference: Yup.string().required("Required!"),
+    had_covid: Yup.string().required("Required!"),
+    vaccinated: Yup.string().required("Required!"),
+    had_covid_at: Yup.date().required("Required!").nullable(),
+    vaccinated_at: Yup.date().required("Required!").nullable(),
   });
 
   const navigate = useNavigate();
@@ -57,18 +57,18 @@ const FormikContainer = () => {
             <Grid container spacing={4}>
               <Grid item xs={12}>
                 <FormikControl
-                  control="workRadio"
+                  control="work_preference"
                   label="How would you prefer to work?"
-                  name="workRadio"
-                  options={workRadio}
+                  name="work_preference"
+                  options={work_preference}
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormikControl
-                  control="covidRadio"
+                  control="had_covid"
                   label="Did you contact covid 19? :("
-                  name="covidRadio"
-                  options={covidRadio}
+                  name="had_covid"
+                  options={had_covid}
                 />
               </Grid>
               <Grid
@@ -89,14 +89,18 @@ const FormikContainer = () => {
                 xs={4}
               >
                 <Typography className="text-xl">Contact date?</Typography>
-                <FormikControl control="date" label="Time" name="covidDate" />
+                <FormikControl
+                  control="date"
+                  label="Time"
+                  name="had_covid_at"
+                />
               </Grid>
               <Grid item xs={12}>
                 <FormikControl
-                  control="vaccineRadio"
+                  control="vaccinated"
                   label="Have you been vaccinated?"
-                  name="vaccineRadio"
-                  options={vaccineRadio}
+                  name="vaccinated"
+                  options={vaccinated}
                 />
               </Grid>
 
@@ -114,7 +118,11 @@ const FormikContainer = () => {
                 xs={6}
               >
                 <Typography>When did you get your covid Vaccine?</Typography>
-                <FormikControl control="date" label="Time" name="vaccineDate" />
+                <FormikControl
+                  control="date"
+                  label="Time"
+                  name="vaccinated_at"
+                />
               </Grid>
 
               <Grid item xs={12}>

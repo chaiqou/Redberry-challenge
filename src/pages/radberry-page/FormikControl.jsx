@@ -4,11 +4,11 @@ import SomethingTextarea from "./SomethingTextarea";
 
 const FormikControl = ({ control, ...rest }) => {
   switch (control) {
-    case "devtalkRadio":
+    case "will_organize_devtalk":
       return <DevtalkRadioButton {...rest} />;
-    case "devTextarea":
+    case "devtalk_topic":
       return <DevtalkTextarea {...rest} />;
-    case "somethingTextarea":
+    case "something_special":
       return <SomethingTextarea {...rest} />;
     default:
       return null;
