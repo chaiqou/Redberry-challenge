@@ -3,6 +3,7 @@ import { Disclosure } from "@headlessui/react";
 import { AiOutlineArrowUp } from "react-icons/ai";
 import PersonalDisclosure from "./PersonalDisclosure";
 import SkillsDisclosure from "./SkillsDisclosure";
+import CovidDisclosure from "./CovidDisclosure";
 
 const DisclosureComponent = ({
   email,
@@ -11,6 +12,11 @@ const DisclosureComponent = ({
   phone,
   index,
   experience,
+  workpreference,
+  hadcovid,
+  covidtime,
+  vaccinated,
+  vaccinatedtime,
 }) => {
   return (
     <Disclosure>
@@ -24,7 +30,7 @@ const DisclosureComponent = ({
               } w-5 h-5 text-white`}
             />
           </Disclosure.Button>
-          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-black w-[1154px] h-[750px]  bg-white">
+          <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-black w-[1154px] h-[870px]  bg-white">
             <PersonalDisclosure
               firstname={firstname}
               lastname={lastname}
@@ -32,6 +38,13 @@ const DisclosureComponent = ({
               phone={phone}
             />
             <SkillsDisclosure experience={experience} />
+            <CovidDisclosure
+              workpreference={workpreference}
+              hadcovid={hadcovid}
+              covidtime={covidtime}
+              vaccinated={vaccinated}
+              vaccinatedtime={vaccinatedtime}
+            />
           </Disclosure.Panel>
         </>
       )}

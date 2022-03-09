@@ -17,3 +17,9 @@ export const labelsforDisclosure = `text-['Montserrat'] italic text-[16px] leadi
 
 // REUSABLE VALUES FOR DISCLOSURE
 export const valuesforDisclosure = `absolute width-[140px] height-[24px] font-['Montserrat'] italic font-normal text-[14px] leading-[17px] flex items-center text-[#454545]`;
+
+//  reusable headers disclosure
+export const headersforDisclosure = `absolute w-[645px] h-[52px] font-['Montserrat'] text-[18px] leading-[18px] flex items-center`;
+
+// reusable radio values for disclosure
+export const radioValuesDisclosure = `absolute h-[22px] font-['Montserrat'] weight-normal text-[14px] leading-[17px] flex items center`;

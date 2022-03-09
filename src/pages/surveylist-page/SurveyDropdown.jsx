@@ -16,7 +16,7 @@ const SurveyDropdown = () => {
   console.log(datas);
 
   return (
-    <div className="w-full absolute top-[180px] left-[300px] px-4 pt-16 ">
+    <div className="w-full absolute top-[100px] left-[300px] px-4 pt-16 ">
       <div className="w-full p-2 mx-auto bg-black rounded-2xl">
         {datas.map((data, index) => (
           <DisclosureComponent
@@ -27,6 +27,11 @@ const SurveyDropdown = () => {
             email={data.email}
             phone={data.phone}
             experience={data.skills[0].experience}
+            workpreference={data.work_preference}
+            hadcovid={data.had_covid}
+            covidtime={data.had_covid_at}
+            vaccinated={data.vaccinated}
+            vaccinatedtime={data.vaccinated_at}
           />
         ))}
       </div>
