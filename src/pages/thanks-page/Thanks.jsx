@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Thanks = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Redberry - Thanks ";
+  }, []);
+
   setTimeout(() => {
     navigate("/");
   }, 3000);

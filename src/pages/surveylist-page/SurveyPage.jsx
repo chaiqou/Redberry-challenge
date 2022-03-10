@@ -1,6 +1,11 @@
 import SurveyDropdown from "./SurveyDropdown";
+import { useEffect } from "react";
 
 const SurveyPage = () => {
+  useEffect(() => {
+    document.title = "Redberry - Applications list";
+  }, []);
+
   return (
     <div className="h-screen bg-black">
       <h1

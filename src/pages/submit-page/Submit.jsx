@@ -10,6 +10,10 @@ const Submit = () => {
   const [technical, setTechnical] = useState({});
   const navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = "Redberry - Submit";
+  }, []);
+
   //personal page get data
 
   useEffect(() => {
@@ -45,7 +49,7 @@ const Submit = () => {
 
   const onClickHandler = () => {
     const parameters = {
-      token: "191d171b-25f8-4b1c-8bfe-252a8e1e890a",
+      token: process.env.REACT_APP_API_KEY,
       first_name: name.first_name,
       last_name: name.last_name,
       email: name.email,
@@ -66,9 +70,7 @@ const Submit = () => {
       something_special: devtalk.something_special,
     };
 
-    // f2925294-fef9-4ea0-8020-d0998c9c5e54 old token
-
-    const token = "191d171b-25f8-4b1c-8bfe-252a8e1e890a";
+    const token = process.env.REACT_APP_API_KEY;
 
     const config = { headers: { Authorization: `Bearer ${token}` } };
 
@@ -85,21 +87,21 @@ const Submit = () => {
         console.log("Erreeer", err.response);
       });
 
-    if (parameters) navigate("/");
+    if (parameters) navigate("/thanks");
   };
 
   return (
     <div className="h-screen bg-black">
       <button
         onClick={onClickHandler}
-        className="animate-bounce-in absolute w-[12rem] left-[754px] top-[522px]  text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl
+        className="animate-bounce-in absolute w-[12rem] left-[870px] top-[522px]  text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl
          focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-6 mb-6"
       >
         Submit
       </button>
       <Link
         to="/personal"
-        className="animate-bounce-in absolute w-[12rem] left-[754px] top-[582px]  text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl
+        className="animate-bounce-in absolute w-[12rem] left-[870px] top-[582px]  text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl
         focus:ring-4 focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-6 mb-6"
       >
         Back

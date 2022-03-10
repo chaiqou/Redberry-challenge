@@ -57,7 +57,7 @@ const FormikContainer = () => {
             />
             <NextButton
               type="submit"
-              position={`absolute left-68  top-[980px]`}
+              position={`absolute left-48  top-[830px]`}
             />
           </Form>
         )}
