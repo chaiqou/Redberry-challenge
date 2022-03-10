@@ -5,7 +5,6 @@ import NextButton from "../../components/NextButton";
 import FormikControl from "./FormikControl";
 import { useNavigate } from "react-router-dom";
 import { Container, Grid, Typography } from "@material-ui/core";
-import { vaccinated } from "./test";
 
 const FormikContainer = () => {
   const work_preference = [
@@ -31,6 +30,7 @@ const FormikContainer = () => {
     had_covid_at: "",
     vaccinated_at: "",
   };
+
   const validationSchema = Yup.object({
     work_preference: Yup.string().required("Required!"),
     had_covid: Yup.string().required("Required!"),

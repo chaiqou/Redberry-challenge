@@ -52,7 +52,7 @@ const Submit = () => {
 
   const onClickHandler = () => {
     const parameters = {
-      token: "f745660c-8e59-4c00-9c27-11397e920b51",
+      token: "8f7bb12a-af99-41a6-963e-8957509700c0",
       first_name: name.first_name,
       last_name: name.last_name,
       email: name.email,
@@ -73,7 +73,7 @@ const Submit = () => {
       something_special: devtalk.something_special,
     };
 
-    const token = "f745660c-8e59-4c00-9c27-11397e920b51";
+    const token = "8f7bb12a-af99-41a6-963e-8957509700c0";
 
     const config = { headers: { Authorization: `Bearer ${token}` } };
 
