@@ -47,9 +47,12 @@ const Submit = () => {
     }
   }, []);
 
+  // this method converts string to boolean
+  const convertToBoolean = (val) => val === "true" || val === "True";
+
   const onClickHandler = () => {
     const parameters = {
-      token: "191d171b-25f8-4b1c-8bfe-252a8e1e890a",
+      token: "f745660c-8e59-4c00-9c27-11397e920b51",
       first_name: name.first_name,
       last_name: name.last_name,
       email: name.email,
@@ -60,17 +63,17 @@ const Submit = () => {
           experience: technical.experience,
         },
       ],
-      work_preference: "from_office",
-      had_covid: true,
+      work_preference: covid.work_preference,
+      had_covid: convertToBoolean(covid.had_covid),
       had_covid_at: covid.had_covid_at,
-      vaccinated: true,
+      vaccinated: convertToBoolean(covid.vaccinated),
       vaccinated_at: covid.vaccinated_at,
-      will_organize_devtalk: true,
+      will_organize_devtalk: convertToBoolean(devtalk.will_organize_devtalk),
       devtalk_topic: devtalk.devtalk_topic,
       something_special: devtalk.something_special,
     };
 
-    const token = "191d171b-25f8-4b1c-8bfe-252a8e1e890a";
+    const token = "f745660c-8e59-4c00-9c27-11397e920b51";
 
     const config = { headers: { Authorization: `Bearer ${token}` } };
 

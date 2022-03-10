@@ -8,8 +8,8 @@ import { Container } from "@material-ui/core";
 
 const FormikContainer = () => {
   const will_organize_devtalk = [
-    { key: "Yes", value: "Yes" },
-    { key: "No", value: "No" },
+    { key: "Yes", value: "true" },
+    { key: "No", value: "false" },
   ];
 
   const initialValues = {

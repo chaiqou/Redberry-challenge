@@ -5,22 +5,23 @@ import NextButton from "../../components/NextButton";
 import FormikControl from "./FormikControl";
 import { useNavigate } from "react-router-dom";
 import { Container, Grid, Typography } from "@material-ui/core";
+import { vaccinated } from "./test";
 
 const FormikContainer = () => {
   const work_preference = [
-    { key: "From Sairme Office", value: "From Sairme Office" },
-    { key: "From Home", value: "From Home" },
-    { key: "Hybrid", value: "Hybrid" },
+    { key: "From Sairme Office", value: "from_home" },
+    { key: "From Home", value: "from_office" },
+    { key: "Hybrid", value: "hybrid" },
   ];
 
   const had_covid = [
-    { key: "Yes", value: "Yes" },
-    { key: "No", value: "No" },
+    { key: "Yes", value: "true" },
+    { key: "No", value: "false" },
   ];
 
   const vaccinated = [
-    { key: "Yes", value: "Yes1" },
-    { key: "No", value: "No1" },
+    { key: "Yes", value: "true1" },
+    { key: "No", value: "false1" },
   ];
 
   const initialValues = {

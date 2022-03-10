@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { reusableHeaderStyles } from "../../helpers/ReusableStyles";
 import SplitContainer from "../../components/SplitContainer";
 import TextContainer from "../../components/TextContainer";

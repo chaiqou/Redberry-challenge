@@ -1,7 +1,6 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
 import { reusableStylesError } from "../../helpers/ReusableStyles";
-import { Typography } from "@material-ui/core";
 
 const WorkRadioButton = ({ label, name, options, rest }) => {
   return (

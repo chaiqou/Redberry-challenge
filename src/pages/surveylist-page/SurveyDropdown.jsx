@@ -7,7 +7,7 @@ const SurveyDropdown = () => {
 
   useEffect(() => {
     Axios.get(
-      "https://bootcamp-2022.devtest.ge/api/applications?token=191d171b-25f8-4b1c-8bfe-252a8e1e890a"
+      "https://bootcamp-2022.devtest.ge/api/applications?token=f745660c-8e59-4c00-9c27-11397e920b51"
     ).then((response) => {
       setDatas(response.data);
     });
