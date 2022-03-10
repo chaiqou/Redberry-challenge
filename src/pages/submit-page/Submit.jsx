@@ -49,7 +49,7 @@ const Submit = () => {
 
   const onClickHandler = () => {
     const parameters = {
-      token: process.env.REACT_APP_API_KEY,
+      token: "191d171b-25f8-4b1c-8bfe-252a8e1e890a",
       first_name: name.first_name,
       last_name: name.last_name,
       email: name.email,
@@ -70,7 +70,7 @@ const Submit = () => {
       something_special: devtalk.something_special,
     };
 
-    const token = process.env.REACT_APP_API_KEY;
+    const token = "191d171b-25f8-4b1c-8bfe-252a8e1e890a";
 
     const config = { headers: { Authorization: `Bearer ${token}` } };
 

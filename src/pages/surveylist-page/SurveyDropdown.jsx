@@ -13,8 +13,6 @@ const SurveyDropdown = () => {
     });
   }, []);
 
-  console.log(datas);
-
   return (
     <div className="w-full absolute top-[100px] left-[300px] px-4 pt-16 ">
       <div className="w-full p-2 mx-auto bg-black rounded-2xl">
